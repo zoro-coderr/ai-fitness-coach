@@ -662,6 +662,84 @@ body {
         margin-top: 20px;
     }
 }
+/* Button hover animations */
+.btn-primary, .btn-secondary, .phone-content button {
+    transition: all 0.3s ease; /* smooth transition */
+}
+
+.btn-primary:hover, .btn-secondary:hover, .phone-content button:hover {
+    transform: scale(1.05); /* slightly bigger */
+    background-color: #556cd6; /* subtle color change for primary */
+    cursor: pointer;
+}
+
+.btn-primary:active, .btn-secondary:active, .phone-content button:active {
+    transform: scale(0.95); /* slightly smaller on click */
+}
 
 
 
+
+/* Scroll animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Scroll animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Hidden before scroll */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease-out;
+}
+
+/* When visible */
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Fade-in animation */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-on-scroll.fade-in-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+#track-btn {
+    padding: 10px 30px;       /* bada button */
+    border-radius: 20px;
+    border: none;
+    background: #576ed5;
+    color: #f2ecec;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    margin: 40px auto 0;      /* center horizontally, thoda upar space */
+}
+
+#track-btn:hover {
+    transform: scale(1.05);
+    background-color: #4756b3;
+}

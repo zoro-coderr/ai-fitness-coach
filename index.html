@@ -51,7 +51,7 @@
 
 
        <!-- Hero Section -->
-<section class="hero" role="region" aria-labelledby="hero-title">
+<section class="hero fade-in" role="region" aria-labelledby="hero-title">
     <div class="hero-content">
         <h1 id="hero-title">Your AI Health Coach – Personalized Fitness, Diet & Motivation</h1>
         <p>Get custom workout plans, diet charts, and progress tracking – powered by AI made for YOU.</p>
@@ -65,33 +65,43 @@
             <div class="phone-notch"></div>
             <div class="phone-screen">
                 <div class="phone-content">
-                    <div class="greeting">Good Morning</div>
-                    <div class="name">Alex</div>
+                    <div class="greeting">Good Morning,</div>
+                    <div class="name">Zoro</div>
                     
                     <div class="today-plan">
-                        <div class="plan-title">Today's Plan</div>
+                        <div class="plan-title">Tracker</div>
                         <div class="exercise-item">
-                            📊 Viscale Gentlo<br />
+                            📊 Progress Done<br />
                             <small>28% | 08:45</small>
                         </div>
                     </div>
                     
                     <div class="today-plan">
-                        <div class="plan-title">Rest Plan</div>
+                        <div class="plan-title">Calorie limit</div>
                         <div class="progress-ring">
                             <div class="ring">
                                 <div class="ring-text">1500</div>
                             </div>
                         </div>
                         <div style="font-size: 12px;">
-                            ▼ Scissors<br />
-                            ▼ Tile<br />
-                            ▼ Astroming<br />
-                            ✓ Kostilatis
-                        </div>
+    ▼ Stretching<br />
+    ▼ Meditation<br />
+    ▼ Hydration Reminder<br />
+    ✓ Completed Warm-up
+</div>
+
                     </div>
                     
-                    <button style="background: #667eea; border: none; color: white; padding: 12px 24px; border-radius: 20px; width: 100%; margin-top: 15px; cursor: pointer;">Flow Downbd</button>
+                   <button id="track-btn">
+        Track Progress
+        <span id="track-spinner" style="display:none;">⏳</span>
+    </button>
+</div>
+
+
+
+
+
                 </div>
             </div>
         </div>
@@ -112,7 +122,7 @@
 
 
     <!-- How It Works Section -->
-<section class="how-it-works">
+<section class="how-it-works fade-in">
   <div class="container">
     <h2>How It Works</h2>
     <div class="steps">
@@ -136,7 +146,8 @@
 </section>
 
 <!-- Features Section -->
-<section id="features">
+<section id="features" class="animate-on-scroll">
+
   <div class="container">
     <h2>Key Features</h2>
     <div class="features-cards">
@@ -157,7 +168,8 @@
 </section>
 
 <!-- Testimonials Section -->
-<section id="testimonials">
+<section id="testimonials" class="animate-on-scroll">
+
   <div class="container">
     <h2>What Our Users Say</h2>
     <div id="testimonial-slider">
@@ -173,7 +185,8 @@
 </section>
 
 <!-- Pricing Section -->
-<section id="pricing">
+<section id="pricing" class="animate-on-scroll">
+
   <div class="container">
     <h2>Pricing Plans</h2>
     <div class="pricing-cards">
@@ -260,5 +273,22 @@ document.addEventListener("DOMContentLoaded", () => {
             modal.style.display = 'flex';
         });
     </script>
+    <script>
+const flowBtn = document.getElementById('flow-btn');
+const flowSpinner = document.getElementById('flow-spinner');
+
+flowBtn.addEventListener('click', () => {
+    flowSpinner.style.display = 'inline';  // show spinner
+    flowBtn.disabled = true;               // disable button
+
+    // Simulate API call delay (2 seconds)
+    setTimeout(() => {
+        flowSpinner.style.display = 'none'; // hide spinner
+        flowBtn.disabled = false;           // enable button
+        alert('Flow action completed!');    // optional success message
+    }, 2000);
+});
+</script>
+
 </body>
 </html>

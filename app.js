@@ -151,3 +151,74 @@ sendBtn.addEventListener("click", sendMessage);
 chatInput.addEventListener("keypress", (e) => {
   if (e.key === "Enter") sendMessage();
 });
+
+
+// Scroll animations
+const faders = document.querySelectorAll('.fade-in');
+
+const appearOptions = {
+  threshold: 0.2
+};
+
+const appearOnScroll = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, appearOptions);
+
+faders.forEach(fader => {
+  appearOnScroll.observe(fader);
+});
+// Removed duplicate declaration and event listener for trackBtn and trackSpinner
+const scrollElements = document.querySelectorAll('.animate-on-scroll');
+
+function checkScroll() {
+    const triggerBottom = window.innerHeight * 0.85;
+
+    scrollElements.forEach(el => {
+        const elementTop = el.getBoundingClientRect().top;
+
+        if(elementTop < triggerBottom) {
+            el.classList.add('visible');
+        }
+    });
+}
+
+window.addEventListener('scroll', checkScroll);
+window.addEventListener('load', checkScroll); // also run on page load
+// Existing code ends here...
+
+// Animate elements on scroll
+const animateElements = document.querySelectorAll('.animate-on-scroll');
+
+function checkAnimate() {
+  const triggerBottom = window.innerHeight * 0.85;
+
+  animateElements.forEach(el => {
+    const elementTop = el.getBoundingClientRect().top;
+
+    if (elementTop < triggerBottom) {
+      el.classList.add('fade-in-active');
+    }
+  });
+}
+
+window.addEventListener('scroll', checkAnimate);
+window.addEventListener('load', checkAnimate);
+const trackBtn = document.getElementById('track-btn');
+const trackSpinner = document.getElementById('track-spinner');
+
+trackBtn.addEventListener('click', () => {
+  trackSpinner.style.display = 'inline-block';  // show spinner
+  trackBtn.disabled = true;                     // disable button
+
+  // Simulate API call delay (2 seconds)
+  setTimeout(() => {
+    trackSpinner.style.display = 'none';       // hide spinner
+    trackBtn.disabled = false;                 // enable button
+    alert('Progress tracked successfully!');   // optional success message
+  }, 2000);
+});
