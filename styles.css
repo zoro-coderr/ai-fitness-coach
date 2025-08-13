@@ -1,0 +1,601 @@
+/* styles.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: white;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo::before {
+    content: "♥";
+    background: white;
+    color: #667eea;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.nav {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    opacity: 0.9;
+    transition: opacity 0.3s;
+}
+
+.nav a:hover {
+    opacity: 1;
+}
+
+.sign-up-btn {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 12px 24px;
+    border-radius: 25px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s;
+}
+
+.sign-up-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Hero Section */
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    padding: 60px 0;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    line-height: 1.1;
+    margin-bottom: 30px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    background: white;
+    color: #667eea;
+    padding: 16px 32px;
+    border-radius: 25px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: white;
+    padding: 16px 32px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Phone Mockup */
+.phone-mockup {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.phone {
+    width: 280px;
+    height: 560px;
+    background: #000;
+    border-radius: 35px;
+    padding: 8px;
+    position: relative;
+    transform: rotate(5deg);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    animation: float 6s ease-in-out infinite;
+}
+
+.phone-screen {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #8B5FBF 0%, #667eea 100%);
+    border-radius: 27px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.phone-notch {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 130px;
+    height: 25px;
+    background: #000;
+    border-radius: 15px;
+}
+
+.phone-content {
+    margin-top: 40px;
+    color: white;
+}
+
+.greeting {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.name {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.today-plan {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 15px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.plan-title {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-bottom: 10px;
+}
+
+.exercise-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.progress-ring {
+    width: 80px;
+    height: 80px;
+    margin: 20px auto;
+    position: relative;
+}
+
+.ring {
+    width: 100%;
+    height: 100%;
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.ring::after {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border: 4px solid transparent;
+    border-top-color: #FFD700;
+    border-radius: 50%;
+    transform: rotate(180deg);
+}
+
+.ring-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* How It Works Section - Modern Layout */
+.how-it-works {
+    padding: 80px 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+}
+
+.how-it-works h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 60px;
+}
+
+/* Steps layout */
+.steps {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    max-width: 1000px;
+    margin: 0 auto;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.step {
+    flex: 1;
+    min-width: 250px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+    backdrop-filter: blur(10px);
+}
+
+.step:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.step-icon {
+    font-size: 3rem;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    transition: all 0.3s;
+}
+
+.step h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.step p {
+    font-size: 1rem;
+    opacity: 0.9;
+    line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .steps {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+
+    .step {
+        max-width: 400px;
+    }
+}
+
+
+/* Animations */
+@keyframes float {
+    0%, 100% { transform: rotate(5deg) translateY(0px); }
+    50% { transform: rotate(5deg) translateY(-10px); }
+}
+/* Features Section */
+#features {
+    background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.1));
+    text-align: center;
+    padding: 80px 20px;
+}
+
+#features h2 {
+    font-size: 3rem;
+    margin-bottom: 60px;
+    font-weight: bold;
+}
+
+.features-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    background: rgba(255,255,255,0.1);
+    padding: 30px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s, background 0.3s;
+    color: white;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255,255,255,0.2);
+}
+
+.feature-card h3 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+/* Testimonials Section */
+#testimonials {
+    background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.1));
+    padding: 80px 20px;
+    text-align: center;
+}
+
+#testimonials h2 {
+    font-size: 3rem;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+#testimonial-slider {
+    max-width: 700px;
+    margin: 0 auto 20px;
+    font-style: italic;
+    font-size: 1.2rem;
+    color: white;
+}
+
+#testimonial-slider strong {
+    display: block;
+    margin-top: 10px;
+    font-style: normal;
+    opacity: 0.9;
+}
+
+.testimonial-buttons button {
+    background: rgba(255,255,255,0.2);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    margin: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.testimonial-buttons button:hover {
+    background: rgba(255,255,255,0.3);
+    transform: translateY(-3px);
+}
+
+/* Pricing Section */
+#pricing {
+    background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.1));
+    padding: 80px 20px;
+    text-align: center;
+}
+
+#pricing h2 {
+    font-size: 3rem;
+    margin-bottom: 60px;
+    font-weight: bold;
+}
+
+.pricing-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.pricing-card {
+    background: rgba(255,255,255,0.1);
+    padding: 40px 30px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    color: white;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255,255,255,0.2);
+}
+
+.pricing-card h3 {
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+.pricing-card button {
+    margin-top: 20px;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.pricing-card button:hover {
+    background: rgba(255,255,255,0.35);
+    transform: translateY(-3px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .features-cards, .pricing-cards {
+        grid-template-columns: 1fr;
+    }
+}
+/* Chatbot Section */
+#chatbot {
+    padding: 60px 20px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.1));
+    border-radius: 20px;
+    text-align: center;
+    margin: 40px 0;
+}
+
+#chatbot h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.chatbox {
+    background: rgba(255,255,255,0.1);
+    border-radius: 15px;
+    padding: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+    backdrop-filter: blur(10px);
+}
+
+#chat-output {
+    height: 200px;
+    overflow-y: auto;
+    margin-bottom: 15px;
+    text-align: left;
+    padding: 10px;
+    background: rgba(0,0,0,0.2);
+    border-radius: 10px;
+}
+
+#chat-output p {
+    margin: 5px 0;
+}
+
+#chat-input {
+    width: 70%;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    margin-right: 10px;
+}
+
+#send-btn {
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    background: #667eea;
+    color: white;
+    cursor: pointer;
+}
+
+#send-btn:hover {
+    background: #5a67d8;
+}
+@media (max-width: 992px) {
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .phone-mockup {
+        margin-top: 40px;
+        transform: none;
+    }
+
+    .phone {
+        width: 220px;
+        height: 440px;
+        transform: none;
+        animation: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .phone {
+        width: 180px;
+        height: 360px;
+    }
+}
+.signup-form {
+    position: relative;
+    z-index: 999;
+}
+#signup-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Ensures it’s on top of everything */
+}
+
+#signup-modal > div {
+    position: relative;
+    z-index: 10000; /* Keeps the form above the overlay */
+}
+
+
+

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="module" src="app.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Health Coach</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <!-- Signup Modal -->
+<div id="signup-modal" style="display:none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.7); justify-content:center; align-items:center;">
+  <div style="background:white; padding: 30px; border-radius: 10px; max-width: 400px; width: 90%; color: black; position: relative;">
+    <button id="close-modal" style="position:absolute; top:10px; right:10px; background:none; border:none; font-size: 20px; cursor:pointer;">×</button>
+    <h2>Sign Up</h2>
+    <form id="signup-form">
+      <label for="email">Email:</label><br />
+      <input type="email" id="email" name="email" required style="width: 100%; padding: 8px; margin-top:5px; margin-bottom: 5px;" />
+      <div id="email-error" style="color: red; font-size: 12px; margin-bottom: 10px;"></div>
+
+      <label for="password">Password:</label><br />
+      <input type="password" id="password" name="password" required minlength="6" style="width: 100%; padding: 8px; margin-top:5px; margin-bottom: 5px;" />
+      <div id="password-error" style="color: red; font-size: 12px; margin-bottom: 15px;"></div>
+
+      <label for="confirm-password">Confirm Password:</label><br />
+      <input type="password" id="confirm-password" name="confirm-password" required minlength="6" style="width: 100%; padding: 8px; margin-top:5px; margin-bottom: 15px;" />
+      <div id="confirm-password-error" style="color: red; font-size: 12px; margin-bottom: 15px;"></div>
+
+      <button type="submit" id="submit-btn" style="background:#667eea; color:white; padding: 10px 20px; border:none; border-radius: 5px; cursor:pointer;">
+        Submit
+        <span id="spinner" style="display:none; margin-left:8px;">⏳</span>
+      </button>
+      <div id="form-message" style="margin-top:10px; font-weight:600;"></div>
+    </form>
+  </div>
+</div>
+
+
+
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">AI Health Coach</div>
+            <nav class="nav">
+                <a href="#features">Features</a>
+                <a href="#testimonials">Testimonials</a>
+                <button class="sign-up-btn">Sign Up</button>
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Your AI Health Coach – Personalized Fitness, Diet & Motivation</h1>
+                <p>Get custom workout plans, diet charts, and progress tracking – powered by AI made for YOU.</p>
+                <div class="hero-buttons">
+                    <a href="#" id="open-signup" class="btn-primary">Get Started Free</a>
+                    <a href="#" class="btn-secondary">See How It Works</a>
+                </div>
+            </div>
+            <div class="phone-mockup">
+                <div class="phone">
+                    <div class="phone-notch"></div>
+                    <div class="phone-screen">
+                        <div class="phone-content">
+                            <div class="greeting">Good Morning</div>
+                            <div class="name">Alex</div>
+                            
+                            <div class="today-plan">
+                                <div class="plan-title">Today's Plan</div>
+                                <div class="exercise-item">
+                                    📊 Viscale Gentlo<br />
+                                    <small>28% | 08:45</small>
+                                </div>
+                            </div>
+                            
+                            <div class="today-plan">
+                                <div class="plan-title">Rest Plan</div>
+                                <div class="progress-ring">
+                                    <div class="ring">
+                                        <div class="ring-text">1500</div>
+                                    </div>
+                                </div>
+                                <div style="font-size: 12px;">
+                                    ▼ Scissors<br />
+                                    ▼ Tile<br />
+                                    ▼ Astroming<br />
+                                    ✓ Kostilatis
+                                </div>
+                            </div>
+                            
+                            <button style="background: #667eea; border: none; color: white; padding: 12px 24px; border-radius: 20px; width: 100%; margin-top: 15px; cursor: pointer;">Flow Downbd</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- AI Fitness Chatbot -->
+<section id="chatbot">
+  <div class="container">
+    <h2>AI Fitness Assistant</h2>
+    <div class="chatbox">
+      <div id="chat-output"></div>
+      <input type="text" id="chat-input" placeholder="Ask me about workouts or diet..." />
+      <button id="send-btn">Send</button>
+    </div>
+  </div>
+</section>
+
+
+    <!-- How It Works Section -->
+<section class="how-it-works">
+  <div class="container">
+    <h2>How It Works</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-icon">👤</div>
+        <h3>Tell Us About You</h3>
+        <p>Quick 60-second quiz<br>create in a row</p>
+      </div>
+      <div class="step">
+        <div class="step-icon">🤖</div>
+        <h3>AI Creates Your Plan</h3>
+        <p>Tailored workouts &<br>meals for a good</p>
+      </div>
+      <div class="step">
+        <div class="step-icon">💪</div>
+        <h3>You Transform</h3>
+        <p>Track progress & stay<br>motivated of vine</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section id="features">
+  <div class="container">
+    <h2>Key Features</h2>
+    <div class="features-cards">
+      <div class="feature-card">
+        <h3>Personalized Workouts</h3>
+        <p>Custom workout plans based on your goals, fitness level, and preferences.</p>
+      </div>
+      <div class="feature-card">
+        <h3>AI Diet Planner</h3>
+        <p>Tailored meal plans to help you stay on track with your nutrition goals.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Progress Tracking</h3>
+        <p>Track your workouts, diet, and body measurements all in one place.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonials">
+  <div class="container">
+    <h2>What Our Users Say</h2>
+    <div id="testimonial-slider">
+      <div class="testimonial">"This app transformed my fitness routine! Highly recommend."<strong>- Sarah K.</strong></div>
+      <div class="testimonial">"The AI diet plans are super helpful and easy to follow."<strong>- Mike L.</strong></div>
+      <div class="testimonial">"Tracking my progress has never been easier. Love it!"<strong>- Priya S.</strong></div>
+    </div>
+    <div class="testimonial-buttons">
+      <button id="prev-testimonial">◀ Prev</button>
+      <button id="next-testimonial">Next ▶</button>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing Section -->
+<section id="pricing">
+  <div class="container">
+    <h2>Pricing Plans</h2>
+    <div class="pricing-cards">
+      <div class="pricing-card">
+        <h3>Free Plan</h3>
+        <p>Basic workout and diet plans</p>
+        <p><strong>Free</strong></p>
+        <button>Get Started</button>
+      </div>
+      <div class="pricing-card">
+        <h3>Pro Plan</h3>
+        <p>Advanced AI workouts, diet & progress tracking</p>
+        <p><strong>$9.99/month</strong></p>
+        <button>Subscribe</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials JS -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const testimonials = document.querySelectorAll("#testimonial-slider .testimonial");
+  let currentIndex = 0;
+
+  function showTestimonial(index) {
+    testimonials.forEach((t, i) => t.style.display = i === index ? "block" : "none");
+  }
+
+  showTestimonial(currentIndex);
+
+  document.getElementById("prev-testimonial").addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+    showTestimonial(currentIndex);
+  });
+
+  document.getElementById("next-testimonial").addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % testimonials.length;
+    showTestimonial(currentIndex);
+  });
+});
+</script>
+
+
+    <script>
+        // Modal Elements
+        const modal = document.getElementById('signup-modal');
+        const openBtn = document.querySelector('.btn-primary');
+        const closeBtn = document.getElementById('close-modal');
+
+        // Open modal on "Get Started Free" button click
+        openBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            modal.style.display = 'flex';
+        });
+
+        // Close modal on "Close" button click
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        // Handle form submission
+        document.getElementById('signup-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for signing up! (This is a demo.)');
+            modal.style.display = 'none';
+        });
+
+        // Smooth scroll to How It Works on "See How It Works" button click
+        document.querySelector('.btn-secondary').addEventListener('click', (e) => {
+            e.preventDefault();
+            document.querySelector('.how-it-works').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Extra: Close modal if clicked outside modal content
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        // Handle top-right sign up button too
+        document.querySelector('.sign-up-btn').addEventListener('click', () => {
+            modal.style.display = 'flex';
+        });
+    </script>
+</body>
+</html>
