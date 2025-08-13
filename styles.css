@@ -596,6 +596,72 @@ body {
     position: relative;
     z-index: 10000; /* Keeps the form above the overlay */
 }
+/* Make hero section responsive */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 20px;
+    flex-wrap: wrap; /* allows stacking on small screens */
+}
+
+.hero-content {
+    flex: 1;
+    min-width: 250px; /* ensures it doesn't shrink too small */
+}
+
+.phone-mockup {
+    flex: 1;
+    min-width: 250px;
+    margin-top: 20px;
+}
+
+/* Media query for tablets & phones */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .phone-mockup {
+        width: 80%;
+    }
+}
+/* Hero Section */
+.hero {
+    display: flex;
+    flex-wrap: wrap; /* allows stacking on smaller screens */
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 20px;
+}
+
+.hero-content {
+    flex: 1 1 400px; /* grow, shrink, min-width */
+    max-width: 600px;
+}
+
+.hero-buttons {
+    margin-top: 20px;
+}
+
+.phone-mockup {
+    flex: 1 1 300px; /* responsive width */
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+/* Make phone smaller on mobile */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column; /* stack vertically */
+        text-align: center;
+    }
+    .phone-mockup {
+        margin-top: 20px;
+    }
+}
 
 
 
